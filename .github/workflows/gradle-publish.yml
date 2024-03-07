@@ -37,7 +37,7 @@ jobs :
         run : ./gradlew build
 
       - name : Updating jar file
-        run : ./gredlew bootJar
+        run : ./gradlew bootJar
 
       - name : Build and Push  into docker
         uses: mr-smithers-excellent/docker-build-push@v6
