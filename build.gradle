@@ -38,7 +38,7 @@ dependencies {
 	runtimeOnly 'com.mysql:mysql-connector-j'
 	implementation 'org.springframework.boot:spring-boot-starter'
 	runtimeOnly 'org.postgresql:postgresql'
-
+// ahi
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'io.micrometer:micrometer-tracing-bridge-brave'
