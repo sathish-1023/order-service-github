@@ -21,41 +21,44 @@ repositories {
 	mavenCentral()
 }
 
-//ext {
-//	set('springCloudVersion', "2023.0.0")
-//}
+ext {
+	set('springCloudVersion', "2023.0.0")
+}
 
 dependencies {
 //
-	//implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	//implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	//implementation 'org.springframework.boot:spring-boot-starter-webflux'
-//	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
-//	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
 	compileOnly 'org.projectlombok:lombok'
-	//developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	//runtimeOnly 'com.mysql:mysql-connector-j'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	implementation 'org.springframework.boot:spring-boot-starter'
+	runtimeOnly 'org.postgresql:postgresql'
+
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-//	implementation 'io.micrometer:micrometer-tracing-bridge-brave'
-//	implementation 'io.zipkin.reporter2:zipkin-reporter-brave'
-//	implementation 'org.springframework.boot:spring-boot-starter-actuator'
-//	implementation 'org.springframework.kafka:spring-kafka'
-//	implementation 'org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j'
-//	testImplementation 'org.springframework.kafka:spring-kafka-test'
+	implementation 'io.micrometer:micrometer-tracing-bridge-brave'
+	implementation 'io.zipkin.reporter2:zipkin-reporter-brave'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.kafka:spring-kafka'
+	implementation 'org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j'
+	testImplementation 'org.springframework.kafka:spring-kafka-test'
 
-	//testImplementation 'org.springframework.security:spring-security-test'
+	testImplementation 'org.springframework.security:spring-security-test'
 		//api gateway
 	//testImplementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
 	//testImplementation 'org.springframework.boot:spring-boot-starter-security'
 }
 
-//dependencyManagement {
-//	imports {
-//		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-//	}
-//}
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}
 
 tasks.named('test') {
 	useJUnitPlatform()
