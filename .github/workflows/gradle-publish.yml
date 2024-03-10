@@ -35,6 +35,7 @@ jobs :
         run : chmod +x gradlew
 #      - name: Build with Gradle Wrapper
 #        run : ./gradlew build
+      #
 
       - name : Updating jar file
         run : ./gradlew bootJar
