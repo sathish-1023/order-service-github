@@ -17,7 +17,13 @@ import java.util.concurrent.CompletableFuture;
 public class OrderController {
 
     private final OrderService orderService;
-    @PostMapping()
+
+    @GetMapping("/con")
+    public String Connect(){
+        return orderService.Connect();
+    }
+
+    @GetMapping(consumes = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
     @CircuitBreaker(name = "inventory",fallbackMethod = "fallbackPlaceOrder")
     @TimeLimiter(name = "inventory")
